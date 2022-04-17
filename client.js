@@ -9,6 +9,11 @@ const connect = function () {
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
+  conn.on("connect", () => {
+    console.log("Connection to the game server successfully establish");
+      conn.write('Name: Mvg')
+  })
+
   conn.on("data", () => {
     console.log("you ded cuz you idled")
   });
